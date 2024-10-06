@@ -26,6 +26,11 @@ class Department {
         return this.employees.reduce((total, employee) => total + employee.salary, 0);
         //using reduce to find sum of all salaries
     }
+    //task 4
+    calculateTotalSalaryWithBonus() {
+        return this.employees.reduce((total, employee) => (employee.bonus ? total + employee.salary + employee.bonus : total+employee.salary), 0);
+        //using ternary operators to add bonus if exists
+    }
 }
 
 //task3
