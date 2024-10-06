@@ -13,6 +13,7 @@ class Employee {
     }
 }
 
+//task2
 class Department {
     constructor(name){
         this.name = name;
@@ -24,5 +25,16 @@ class Department {
     getDepartmentSalary() {
         return this.employees.reduce((total, employee) => total + employee.salary, 0);
         //using reduce to find sum of all salaries
+    }
+}
+
+//task3
+class Manager extends Employee{
+    constructor(name, salary, position, department, bonus){ //initializing values for this class
+        super(name, salary, position, department); //calling frrom parent class employee
+        this.bonus = bonus;
+    }
+    getDetails() { //override employee method for manager
+        console.log(`Employee's name: ${this.name}\n Position: ${this.position} \n Salary: $${this.salary} \n Bonus: $${this.bonus}`); 
     }
 }
